@@ -4,19 +4,23 @@ executors:
   python_docker:
     docker:
       - image: circleci/python:3.7-node-browsers-legacy
-                    
+
 jobs:
   build:
     executor: python_docker
     steps:
+      - checkout:
+          path: ~/project
       - run:
           command: |
-              echo 'Hello world, Welcome'
+            ls -al
+            sudo chown -R circleci:circleci .
+            chmod -R +rwx ./ci
+            ./ci/setup.sh
+          name: Setup
 
 workflows:
   build_test_deploy:
     jobs:
       - build:
-            name: build
-
-
+          name: build
