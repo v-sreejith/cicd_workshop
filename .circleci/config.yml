@@ -8,8 +8,8 @@ executors:
 jobs:
   build:
     executor: python_docker
-      steps:
-        - run:
+    steps:
+      - run:
           command: |
               echo 'Hello world, Welcome'
 
