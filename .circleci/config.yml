@@ -22,7 +22,7 @@ jobs:
           command: |
             ./ci/run_tests.sh
           name: Run Tests
-      - store-artifacts:
+      - store_artifacts:
           path: reports
 
 workflows:
