@@ -24,6 +24,9 @@ jobs:
           name: Run Tests
       - store_artifacts:
           path: reports
+      - run:
+          command: tar -cvf package.tar .
+          name: Create Package
 
 workflows:
   build_test_deploy:
