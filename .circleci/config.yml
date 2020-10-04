@@ -18,6 +18,10 @@ jobs:
             chmod -R +rwx ./ci
             ./ci/setup.sh
           name: Setup
+      - run:
+          command: |
+            ./ci/run_test.sh
+          name: Run Tests
 
 workflows:
   build_test_deploy:
