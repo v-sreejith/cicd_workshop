@@ -20,7 +20,7 @@ jobs:
           name: Setup
       - run:
           command: |
-            ./ci/run_test.sh
+            ./ci/run_tests.sh
           name: Run Tests
 
 workflows:
